@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+    redis:
+        image: ${IMAGE:-redis:7.0.8}
+        container_name: ${CONTAINER_NAME:-redis}
+        command:
+            - /bin/sh
+            - -c
+            - redis-server --requirepass ${REDIS_PASSWORD:-admin}
+        volumes:
+            - ./volumes/redis/data:/data
+        ports:
+            - 6379:6379
+        restart: always
+        networks:
+            - redis
+
+networks:
+    redis:
+        name: redis
