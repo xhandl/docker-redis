@@ -13,7 +13,7 @@ Main parametrs can be modified via `.env` file.
 
 Default configuration:
 ```
-IMAGE: redis:7.0.8
+IMAGE: redis:7
 CONTAINER NAME: redis
 PASSWORD: admin
 PORT: 6379 (default for Redis)
